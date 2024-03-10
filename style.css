@@ -1,12 +1,12 @@
 body {
-    background: #000000;
+    background-color: #000000;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
 }
 
 div {
-    background: #ffffff;
+    background-color: #ffffff;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
