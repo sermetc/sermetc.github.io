@@ -5,3 +5,12 @@ body {
     border-radius: 10px;
 }
 
+div {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    font-family: monospace;
+    color: #000000;
+}
+
