@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion - Physics 101 Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Projectile Motion Experiment</h1>
+        <p class="subtitle">Air Table with Spark Timer</p>
+
+        <div class="main-content">
+            <div class="simulation-area">
+                <div class="table-container">
+                    <canvas id="airTableCanvas" width="700" height="500"></canvas>
+                    <div class="slope-indicator">
+                        <div>Slope: <span id="slopeDisplay">5</span>°</div>
+                        <div>g<sub>eff</sub> = <span id="gEffDisplay">85.4</span> cm/s²</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-area">
+                <div class="control-group">
+                    <label for="slopeAngle">Table Slope Angle:</label>
+                    <input type="range" id="slopeAngle" min="1" max="15" value="5" step="0.5">
+                    <span id="slopeValue">5°</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="sparkInterval">Spark Timer Interval:</label>
+                    <input type="range" id="sparkInterval" min="20" max="100" value="40" step="5">
+                    <span id="sparkValue">40 ms</span>
+                </div>
+
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <ol>
+                        <li>Adjust the slope angle of the air table</li>
+                        <li>Set the spark timer interval</li>
+                        <li>Click anywhere on the table to position the puck</li>
+                        <li>Click and drag the puck to set initial velocity</li>
+                        <li>Release to launch - dots mark the path</li>
+                    </ol>
+                </div>
+
+                <div class="button-group">
+                    <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                    <button id="clearDotsBtn" class="btn btn-secondary">Clear Dots</button>
+                </div>
+
+                <div class="velocity-display">
+                    <p><strong>Initial Velocity:</strong></p>
+                    <p>Speed: <span id="speedDisplay">0</span> cm/s</p>
+                    <p>Direction: <span id="directionDisplay">0</span>°</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

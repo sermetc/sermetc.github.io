@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.subtitle {
+    text-align: center;
+    color: #b8b8d1;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+h2 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #00d4ff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.simulation-area {
+    background: #0f0f23;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.table-container {
+    position: relative;
+}
+
+#airTableCanvas {
+    display: block;
+    border-radius: 10px;
+    cursor: crosshair;
+}
+
+.slope-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #00ff88;
+    line-height: 1.6;
+}
+
+.slope-indicator sub {
+    font-size: 0.7rem;
+}
+
+.controls-area {
+    background: #0f0f23;
+    border-radius: 15px;
+    padding: 25px;
+    min-width: 280px;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #b8b8d1;
+}
+
+.control-group input[type="range"] {
+    width: calc(100% - 60px);
+    vertical-align: middle;
+}
+
+.control-group span {
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+.instructions {
+    background: #1a1a3e;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.instructions ol {
+    margin-left: 20px;
+    color: #b8b8d1;
+    font-size: 0.9rem;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+    background: #2a2a4a;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #3a3a5a;
+}
+
+.velocity-display {
+    background: #1a1a3e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.velocity-display p {
+    margin-bottom: 8px;
+    color: #b8b8d1;
+}
+
+.velocity-display span {
+    color: #00ff88;
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .controls-area {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    #airTableCanvas {
+        width: 100%;
+        height: auto;
+    }
+}
