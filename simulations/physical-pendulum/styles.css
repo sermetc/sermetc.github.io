@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+h2 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.simulation-area {
+    background: #0f0f23;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#pendulumCanvas {
+    display: block;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #1a1a3e 0%, #0d0d1a 100%);
+}
+
+.controls-area {
+    background: #0f0f23;
+    border-radius: 15px;
+    padding: 25px;
+    min-width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #b8b8d1;
+}
+
+.control-group select,
+.control-group input[type="number"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #2a2a4a;
+    border-radius: 8px;
+    background: #1a1a3e;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.control-group select:focus,
+.control-group input[type="number"]:focus {
+    outline: none;
+    border-color: #00d4ff;
+}
+
+.control-group input[type="range"] {
+    width: calc(100% - 50px);
+    vertical-align: middle;
+}
+
+#angleValue {
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+.btn-primary:disabled {
+    background: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: #2a2a4a;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #3a3a5a;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    color: #000;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 68, 68, 0.4);
+}
+
+.timer-display {
+    background: #1a1a3e;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timer-label {
+    font-size: 0.9rem;
+    color: #b8b8d1;
+    margin-bottom: 5px;
+}
+
+.timer-value {
+    font-size: 2.5rem;
+    font-family: 'Courier New', monospace;
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.results-display {
+    background: #1a1a3e;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #00d4ff;
+}
+
+.results-display h3 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.results-display p {
+    margin-bottom: 10px;
+    color: #b8b8d1;
+}
+
+.results-display span {
+    color: #00ff88;
+}
+
+.results-display .btn {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.data-table-section {
+    background: #0f0f23;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#dataTable th,
+#dataTable td {
+    padding: 12px 20px;
+    text-align: center;
+    border-bottom: 1px solid #2a2a4a;
+}
+
+#dataTable th {
+    background: #1a1a3e;
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+#dataTable tbody tr:hover {
+    background: #1a1a3e;
+}
+
+#dataTable td {
+    color: #b8b8d1;
+}
+
+.btn-remove {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #ff4444;
+    color: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-remove:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.data-table-section .btn {
+    margin-right: 10px;
+}
+
+/* Analysis Section */
+.analysis-section {
+    background: #0f0f23;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.analysis-info {
+    color: #b8b8d1;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.analysis-results {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.plot-container {
+    background: #1a1a3e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#plotCanvas {
+    display: block;
+    background: #0d0d1a;
+    border-radius: 8px;
+}
+
+.fit-results {
+    flex: 1;
+    min-width: 280px;
+    background: #1a1a3e;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.fit-results h3 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.fit-results p {
+    margin-bottom: 10px;
+    color: #b8b8d1;
+}
+
+.fit-results span {
+    color: #00ff88;
+}
+
+.equation {
+    font-size: 1.3rem;
+    font-family: 'Courier New', monospace;
+    color: #fff !important;
+    background: #0d0d1a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px !important;
+}
+
+.gravity-result {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #2a2a4a;
+}
+
+.gravity-value {
+    font-size: 1.4rem;
+    color: #00ff88 !important;
+    font-weight: bold;
+}
+
+.theoretical {
+    font-size: 0.9rem;
+    color: #888 !important;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .controls-area {
+        min-width: 100%;
+    }
+
+    #pendulumCanvas {
+        width: 100%;
+        height: auto;
+    }
+}

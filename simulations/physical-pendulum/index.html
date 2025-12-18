@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Pendulum - Physics 101 Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Physical Pendulum Experiment</h1>
+
+        <div class="main-content">
+            <div class="simulation-area">
+                <canvas id="pendulumCanvas" width="400" height="500"></canvas>
+            </div>
+
+            <div class="controls-area">
+                <div class="control-group">
+                    <label for="pivotDistance">Pivot Distance from Center (h):</label>
+                    <select id="pivotDistance">
+                        <option value="5">5 cm</option>
+                        <option value="10">10 cm</option>
+                        <option value="15" selected>15 cm</option>
+                        <option value="20">20 cm</option>
+                        <option value="25">25 cm</option>
+                        <option value="30">30 cm</option>
+                        <option value="35">35 cm</option>
+                        <option value="40">40 cm</option>
+                        <option value="45">45 cm</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="initialAngle">Initial Angle (θ):</label>
+                    <input type="range" id="initialAngle" min="5" max="20" value="10">
+                    <span id="angleValue">10°</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="periodCount">Number of Periods to Measure:</label>
+                    <input type="number" id="periodCount" min="1" max="20" value="10">
+                </div>
+
+                <div class="button-group">
+                    <button id="releaseBtn" class="btn btn-primary">Release Pendulum</button>
+                    <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                </div>
+
+                <div class="timer-display">
+                    <div class="timer-label">Timer</div>
+                    <div id="timerValue" class="timer-value">0.000 s</div>
+                </div>
+
+                <div class="results-display" id="resultsDisplay" style="display: none;">
+                    <h3>Results</h3>
+                    <p><strong>Pivot Distance (h):</strong> <span id="resultH">-</span> cm</p>
+                    <p><strong>Periods Measured:</strong> <span id="resultPeriods">-</span></p>
+                    <p><strong>Total Time:</strong> <span id="resultTotalTime">-</span> s</p>
+                    <p><strong>Average Period (T):</strong> <span id="resultAvgPeriod">-</span> s</p>
+                    <button id="storeBtn" class="btn btn-success">Store Result</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-table-section">
+            <h2>Recorded Data</h2>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>h (cm)</th>
+                        <th>T (s)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTableBody">
+                </tbody>
+            </table>
+            <button id="clearTableBtn" class="btn btn-danger">Clear Table</button>
+            <button id="exportBtn" class="btn btn-secondary">Export Data</button>
+        </div>
+
+        <div class="analysis-section">
+            <h2>Data Analysis</h2>
+            <p class="analysis-info">Plot y = h² vs x = h·T² and perform linear fit to find g</p>
+            <button id="analyzeBtn" class="btn btn-primary">Analyze Data</button>
+
+            <div id="analysisResults" class="analysis-results" style="display: none;">
+                <div class="plot-container">
+                    <canvas id="plotCanvas" width="500" height="400"></canvas>
+                </div>
+                <div class="fit-results">
+                    <h3>Linear Fit Results</h3>
+                    <p class="equation">y = <span id="slopeValue">-</span>x + <span id="interceptValue">-</span></p>
+                    <p><strong>Slope (a):</strong> <span id="slopeDisplay">-</span> s²</p>
+                    <p><strong>Intercept (b):</strong> <span id="interceptDisplay">-</span> cm²</p>
+                    <p><strong>R² value:</strong> <span id="r2Value">-</span></p>
+                    <div class="gravity-result">
+                        <p>From a = g/(4π²):</p>
+                        <p class="gravity-value">g = <span id="expGravity">-</span> cm/s²</p>
+                        <p class="gravity-value">g = <span id="expGravityM">-</span> m/s²</p>
+                        <p class="theoretical">Theoretical: g = 980 cm/s² (9.80 m/s²)</p>
+                        <p><strong>Percent Error:</strong> <span id="percentError">-</span>%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
