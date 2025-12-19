@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centripetal Acceleration - Physics 101 Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Centripetal Acceleration Experiment</h1>
+        <p class="subtitle">Spring-Cylinder-Pendulum System</p>
+
+        <div class="main-content">
+            <div class="simulation-area">
+                <canvas id="simCanvas" width="500" height="600"></canvas>
+                <div class="sim-info">
+                    <div>Spring Length: <span id="springLengthDisplay">--</span> cm</div>
+                    <div>Cylinder Status: <span id="cylinderStatus">At Rest</span></div>
+                </div>
+            </div>
+
+            <div class="controls-area">
+                <div class="phase-indicator">
+                    <span>Current Phase: </span>
+                    <span id="phaseDisplay" class="phase-text">1 - Measure Empty Spring</span>
+                </div>
+
+                <div class="control-section">
+                    <h3>System Properties</h3>
+                    <div class="control-group" style="text-align: center;">
+                        <label>Spring Stiffness</label>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <span>Slinky</span>
+                            <input type="range" id="kSlider" min="1000" max="10000" value="2450">
+                            <span>Stiff</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Step 1: Empty Spring</h3>
+                    <p class="info-text">Measure natural spring length x₁</p>
+                    <button id="measureX1Btn" class="btn btn-primary">Measure x₁</button>
+                    <div class="measurement-display">
+                        <span>x₁ = </span><span id="x1Value">--</span> cm
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Step 2: With Mass m</h3>
+                    <p class="info-text">Attach mass m and measure x₂</p>
+                    <button id="attachMassBtn" class="btn btn-secondary">Attach Mass m</button>
+                    <button id="measureX2Btn" class="btn btn-primary" disabled>Measure x₂</button>
+                    <div class="measurement-display">
+                        <span>x₂ = </span><span id="x2Value">--</span> cm
+                        <br>
+                        <span>x₀ = x₂ - x₁ = </span><span id="x0Value">--</span> cm
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Step 3: Setup & Experiment</h3>
+                    <p class="info-text">Extend spring to x₃ and release mass from height h</p>
+
+                    <div class="control-group">
+                        <label>Spring Extension x (from x₁):</label>
+                        <input type="range" id="x3Slider" min="0" max="50" value="20" disabled>
+                        <span id="x3SliderValue">20</span> cm
+                    </div>
+
+                    <div class="control-group">
+                        <label>Release Height h (h = h₂ - h₁, vertical drop):</label>
+                        <input type="range" id="hSlider" min="5" max="60" value="20" disabled>
+                        <span id="hSliderValue">20</span> cm
+                    </div>
+
+                    <div class="button-group">
+                        <button id="releaseBtn" class="btn btn-primary" disabled>Release Mass</button>
+                        <button id="resetTrialBtn" class="btn btn-secondary" disabled>Reset Trial</button>
+                    </div>
+
+                    <div class="measurement-display">
+                        <span>x = x₃ - x₁ = </span><span id="xValue">--</span> cm
+                        <br>
+                        <span>h = </span><span id="hValue">--</span> cm
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Step 4: Record Data</h3>
+                    <p class="info-text">When cylinder barely moves, record the values</p>
+                    <button id="recordBtn" class="btn btn-success" disabled>Record Data Point</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-section">
+            <h2>Recorded Data</h2>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>x (cm)</th>
+                        <th>h (cm)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTableBody">
+                </tbody>
+            </table>
+            <div class="table-buttons">
+                <button id="clearTableBtn" class="btn btn-danger">Clear Table</button>
+                <button id="analyzeBtn" class="btn btn-primary" disabled>Analyze Data</button>
+                <button id="fullResetBtn" class="btn btn-danger" style="margin-left: auto;">Reset Experiment</button>
+            </div>
+        </div>
+
+        <div class="analysis-section" id="analysisSection" style="display: none;">
+            <h2>Data Analysis</h2>
+            <div class="analysis-content">
+                <div class="plot-container">
+                    <canvas id="plotCanvas" width="450" height="350"></canvas>
+                </div>
+                <div class="results-container">
+                    <h3>Linear Fit: x = a·h + b</h3>
+                    <p><strong>Slope (a = dx/dh):</strong> <span id="slopeValue">--</span></p>
+                    <p><strong>Intercept (b):</strong> <span id="interceptValue">--</span> cm</p>
+                    <p><strong>R² Value:</strong> <span id="r2Value">--</span></p>
+
+                    <div class="calculation-box">
+                        <h4>Rope Length Calculation</h4>
+                        <p>From: dx/dh = 2x₀/l</p>
+                        <p>l = 2x₀ / slope</p>
+                        <p><strong>x₀ = </strong><span id="x0Result">--</span> cm</p>
+                        <p><strong>Experimental l = </strong><span id="expLength">--</span> cm</p>
+                        <p><strong>Actual l = </strong>75 cm</p>
+                        <p class="error-result"><strong>% Error = </strong><span id="percentError">--</span>%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
