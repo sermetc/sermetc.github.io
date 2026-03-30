@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lume | Photo-Based Micro Journaling</title>
+  <meta name="description" content="Lume turns daily moments into tactile polaroid memories with notes, audio, reminders, and a beautiful time-based library.">
+  <link rel="icon" type="image/png" href="./icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Lume home">
+      <img src="./icon.png" alt="Lume app icon" class="brand-mark">
+      <span>lume</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#story">story</a>
+      <a href="#features">features</a>
+      <a href="#flow">flow</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Photo-based micro journaling for iPhone</p>
+        <h1>Capture the blur before it disappears.</h1>
+        <p class="lede">
+          Lume turns a quick photo into a keepsake you can shake, flip, annotate, favorite,
+          replay, and revisit by day, month, or mood.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#features">See what it does</a>
+          <a class="button button-secondary" href="#flow">View the flow</a>
+        </div>
+        <ul class="hero-notes">
+          <li>polaroid-inspired capture</li>
+          <li>audio notes up to 30 seconds</li>
+          <li>daily reminders and streaks</li>
+        </ul>
+      </div>
+
+      <div class="hero-art reveal reveal-delay-1" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="phone-shell">
+          <div class="phone-screen">
+            <div class="camera-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="polaroid-stack">
+              <article class="polaroid polaroid-main">
+                <div class="photo photo-a"></div>
+                <div class="polaroid-meta">
+                  <span>30 Mar 26</span>
+                  <span class="tag">favorite</span>
+                </div>
+              </article>
+              <article class="polaroid polaroid-back">
+                <div class="note-surface">
+                  <p>sunlight on the tram window, coffee still warm, day oddly calm.</p>
+                  <div class="waveform">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="story section reveal">
+      <div class="story-card pull-quote">
+        <p>“Capture moments, preserve memories.”</p>
+      </div>
+      <div class="story-card story-copy">
+        <p>
+          Lume is built around a simple idea: journaling should feel as immediate as taking a photo,
+          and as tactile as holding onto something real. The app borrows the warmth of a polaroid,
+          the speed of a camera, and the intimacy of a handwritten note.
+        </p>
+      </div>
+    </section>
+
+    <section id="features" class="features section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Why it feels different</p>
+        <h2>Not another grid of disposable photos.</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <span class="feature-index">01</span>
+          <h3>Shoot first</h3>
+          <p>Start with the camera. Each entry begins as a photo, then becomes a memory card instead of a feed post.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-1">
+          <span class="feature-index">02</span>
+          <h3>Shake to develop</h3>
+          <p>The onboarding and capture flow lean into the old instant-film ritual, turning loading into a little bit of theater.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-2">
+          <span class="feature-index">03</span>
+          <h3>Flip and write</h3>
+          <p>Double tap, turn the card over, and leave a typed or handwritten-feeling note on the back.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-index">04</span>
+          <h3>Add a voice</h3>
+          <p>Record up to 30 seconds of audio and keep the tone of the moment, not just the text that describes it.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-1">
+          <span class="feature-index">05</span>
+          <h3>Browse by time</h3>
+          <p>Move through memories in day, month, grouped, or all-entry views, then filter by favorites, audio, or tags.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-2">
+          <span class="feature-index">06</span>
+          <h3>Return every day</h3>
+          <p>Daily reminders and streaks nudge the habit without making the app feel like homework.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="flow" class="flow section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The product rhythm</p>
+        <h2>A fast ritual from capture to archive.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-step reveal">
+          <span class="timeline-dot"></span>
+          <h3>1. Capture</h3>
+          <p>Open straight into a camera-first experience framed like a vintage instant camera.</p>
+        </div>
+        <div class="timeline-step reveal reveal-delay-1">
+          <span class="timeline-dot"></span>
+          <h3>2. Develop</h3>
+          <p>Watch the shot settle into a soft, polaroid-like card with a small moment of motion.</p>
+        </div>
+        <div class="timeline-step reveal reveal-delay-2">
+          <span class="timeline-dot"></span>
+          <h3>3. Annotate</h3>
+          <p>Flip the memory, write a note, attach tags, or record a short voice memo.</p>
+        </div>
+        <div class="timeline-step reveal">
+          <span class="timeline-dot"></span>
+          <h3>4. Collect</h3>
+          <p>Sort the growing stack by date, favorites, audio notes, or tags and export what matters.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing section reveal">
+      <div class="closing-panel">
+        <p class="eyebrow">Built for quiet documentation</p>
+        <h2>Lume makes everyday memory-keeping feel analog again.</h2>
+        <p>
+          Designed around polaroid cards, handwritten notes, soft gradients, and small rituals,
+          it gives ordinary moments enough weight to stick.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>lume</p>
+    <p>photo-based micro journaling</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
