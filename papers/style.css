@@ -268,6 +268,82 @@ footer nav a {
     color: var(--secondary-text);
 }
 
+.status-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-main {
+    flex: 1;
+}
+
+.status-hero {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.status-pill {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.status-copy {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.status-card {
+    max-width: 720px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    text-align: left;
+    background: linear-gradient(180deg, rgba(28, 28, 30, 0.95), rgba(21, 21, 22, 0.95));
+    border: 1px solid #2c2c2e;
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.status-label {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.status-title {
+    margin-top: 0.75rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.status-reason {
+    margin-top: 1rem;
+    color: #d2d2d7;
+    font-size: 1.05rem;
+}
+
+.status-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.status-link {
+    color: var(--primary-color);
+}
+
 .legal-content h1, .legal-content h2 {
     color: #fff;
 }
@@ -279,4 +355,6 @@ footer nav a {
 @media (max-width: 600px) {
     .intro-logo { font-size: 3rem; }
     .features { grid-template-columns: 1fr; }
+    .status-card { padding: 1.5rem; }
+    .status-title { font-size: 1.6rem; }
 }
