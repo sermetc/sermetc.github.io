@@ -333,6 +333,12 @@ footer nav a {
     font-size: 1.05rem;
 }
 
+.status-updated {
+    margin-top: 0.75rem;
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+}
+
 .status-grid {
     margin-top: 2rem;
     display: grid;
@@ -342,6 +348,12 @@ footer nav a {
 
 .status-link {
     color: var(--primary-color);
+}
+
+.status-pill-down {
+    background: rgba(255, 69, 58, 0.16);
+    border-color: rgba(255, 69, 58, 0.35);
+    color: #ffb4ae;
 }
 
 .legal-content h1, .legal-content h2 {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>papers status - operational</title>
+    <title>papers status</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="papers_icon_alternate_v2-iOS-Default-1024x1024@1x.png">
 </head>
@@ -15,26 +15,27 @@
                 <h1 class="logo" style="font-size: 3.5rem;">papers</h1>
                 <img src="papers_icon_alternate_v2-iOS-Default-1024x1024@1x.png" alt="Papers App Icon" class="main-icon">
             </div>
-            <span class="status-pill">All systems operational</span>
-            <h2 class="tagline">The Papers app is up and running normally.</h2>
-            <p class="status-copy">Core app services are available and operating as expected. You should be able to browse feeds, open papers, and sync normally.</p>
+            <span class="status-pill" data-status-pill>All systems operational</span>
+            <h2 class="tagline" data-status-headline>The Papers app is up and running normally.</h2>
+            <p class="status-copy" data-status-copy>Core app services are available and operating as expected. You should be able to browse feeds, open papers, and sync normally.</p>
 
             <div class="status-card">
                 <p class="status-label">Current status</p>
-                <p class="status-title">Down</p>
-                <p class="status-reason">Reason: All services are currently healthy.</p>
+                <p class="status-title" data-status-title>Operational</p>
+                <p class="status-reason" data-status-reason>Reason: All services are currently healthy.</p>
+                <p class="status-updated" data-status-updated>Last updated: Not yet updated.</p>
             </div>
 
             <div class="status-grid">
                 <div class="feature-card">
-                    <span class="feature-icon">🛠️</span>
-                    <h3 class="feature-title">What’s happening</h3>
-                    <p class="feature-desc">The platform is stable and available. No active incident is currently affecting app availability.</p>
+                    <span class="feature-icon" data-status-detail-icon>🛠️</span>
+                    <h3 class="feature-title" data-status-detail-title>What’s happening</h3>
+                    <p class="feature-desc" data-status-detail-copy>The platform is stable and available. No active incident is currently affecting app availability.</p>
                 </div>
                 <div class="feature-card">
                     <span class="feature-icon">⏱️</span>
                     <h3 class="feature-title">What to expect</h3>
-                    <p class="feature-desc">Feeds, paper detail pages, and bookmark sync should respond normally while the service remains healthy.</p>
+                    <p class="feature-desc" data-status-expectation>Feeds, paper detail pages, and bookmark sync should respond normally while the service remains healthy.</p>
                 </div>
                 <div class="feature-card">
                     <span class="feature-icon">📬</span>
@@ -50,11 +51,11 @@
             <a href="index.html">home</a>
             <a href="privacy.html">privacy</a>
             <a href="support.html">support</a>
-            <a href="status.html">status</a>
         </nav>
         <p style="margin-bottom: 1rem; font-size: 0.8rem; opacity: 0.7;">Data provided by <a href="https://arxiv.org" style="color: inherit;">arXiv</a>. We are grateful to arXiv for use of its open access interoperability.</p>
         <p>&copy; 2026 Sermet Cagan. All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
