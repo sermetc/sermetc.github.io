@@ -1,5 +1,5 @@
 {
-    "isDown": true,
-    "reason": "testing killswith",
-    "updatedAt": "2026-03-31T07:39:23Z"
+    "isDown": false,
+    "reason": "All services are currently healthy.",
+    "updatedAt": "2026-03-31T07:40:24Z"
 }
