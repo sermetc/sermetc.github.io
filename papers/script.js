@@ -43,6 +43,7 @@ function formatTimestamp(timestamp) {
 }
 
 async function updateStatusPage() {
+    const statusPage = document.body;
     const pill = document.querySelector('[data-status-pill]');
 
     if (!pill) {
@@ -73,6 +74,7 @@ async function updateStatusPage() {
         detailTitle.textContent = 'What’s happening';
         detailCopy.textContent = 'An active incident is affecting the availability of the Papers app.';
         expectation.textContent = 'You may have trouble loading feeds, opening papers, or syncing bookmarks until the incident is resolved.';
+        statusPage.classList.remove('status-page-loading');
         return;
     }
 
@@ -88,6 +90,7 @@ async function updateStatusPage() {
     detailTitle.textContent = 'What’s happening';
     detailCopy.textContent = 'The platform is stable and available. No active incident is currently affecting app availability.';
     expectation.textContent = 'Feeds, paper detail pages, and bookmark sync should respond normally while the service remains healthy.';
+    statusPage.classList.remove('status-page-loading');
 }
 
 function setupHomePage() {

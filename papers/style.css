@@ -278,6 +278,12 @@ footer nav a {
     flex: 1;
 }
 
+.status-page-loading .status-pill,
+.status-page-loading .status-card,
+.status-page-loading .status-grid .feature-card {
+    opacity: 0.72;
+}
+
 .status-hero {
     max-width: 1000px;
     margin: 0 auto;
